@@ -1,0 +1,162 @@
+/*******************************************************
+ * 1) 🌍 Estils generals del `header`
+ *******************************************************/
+ .header {
+  background-color: #940d0d;
+  color: #ffffff;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/*******************************************************
+ * 2) 📌 Barra superior (top-bar): Xarxes i botons d'usuari
+ *******************************************************/
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #800b0b;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+/* 🔹 Estil botons de login i registre */
+.auth-buttons,
+.nav-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.login-button,
+.soci-button {
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+.login-button {
+  background-color: #ffffff;
+  color: #940e0e;
+}
+
+.soci-button {
+  background-color: #f0c14b;
+  color: #000000;
+}
+
+/*******************************************************
+ * 3) 🏔️ Contenidor principal (header-top): Logo + Menú
+ *******************************************************/
+.header-top {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+/*******************************************************
+ * 4) 🍔 Botó hamburger (menú mòbil)
+ *******************************************************/
+.hamburger {
+  display: block;
+  font-size: 1.5rem;
+  background: #ffffff;
+  color: #940e0e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+}
+
+/*******************************************************
+ * 5) 📱 Menú de navegació en mòbil
+ *******************************************************/
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #940e0e;
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav.open {
+  transform: translateX(0);
+}
+
+/* 🔹 Llista de navegació en format vertical */
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  text-align: center;
+}
+
+.nav-list li {
+  margin: 1rem 0;
+}
+
+.nav-list li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/*******************************************************
+ * 6) 🖥️ Media query per a escriptori (≥ 768px)
+ *******************************************************/
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    width: auto;
+    height: auto;
+    transform: none;
+    background-color: transparent;
+  }
+
+  .nav.open {
+    transform: none;
+  }
+
+  /* 🔹 Menú en format horitzontal */
+  .nav-list {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    text-align: initial;
+  }
+
+  .nav-list li {
+    margin: 0;
+  }
+}

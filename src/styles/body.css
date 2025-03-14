@@ -1,0 +1,127 @@
+/* =========================
+   🌍 Estructura de la pàgina
+   ========================= */
+
+/* Evita desplaçament horitzontal i assegura altura completa */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    overflow-x: hidden; /* 🚀 IMPORTANT: Evita que el contingut es talli */
+}
+
+/* Contenidor principal que organitza la pàgina */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Contingut principal: ocupa l'espai restant i centra el text */
+.content-wrap {
+    flex: 1;
+    max-width: 1000px; /* Amplada màxima en escriptoris */
+    width: 90%; /* 📌 S'adapta en pantalles petites */
+    margin: 0 auto; /* Centra el contingut */
+    padding: 2rem; /* Espai per no tocar marges */
+    box-sizing: border-box; /* 🚀 Evita problemes amb el padding */
+    overflow-wrap: break-word; /* Permet que el text es trenqui si cal */
+}
+
+/* =========================
+   🎨 Secció Hero (Home)
+   ========================= */
+.hero {
+    
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+/* =========================
+   🔘 Botons Generals
+   ========================= */
+button, .ctaButton {
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+    width: auto; /* Els botons no ocupen tota l'amplada per defecte */
+    text-align: center;
+}
+
+.ctaButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* =========================
+   🏔️ Excursions - Targetes
+   ========================= */
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   📩 Formulari de Contacte
+   ========================= */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* =========================
+   📱 Responsive: Adaptació per a mòbils
+   ========================= */
+@media (max-width: 768px) {
+    .content-wrap {
+        width: 95%; /* 📌 En pantalles petites, ocupa gairebé tot l’ample */
+        padding: 1rem; /* Redueix el padding per optimitzar l'espai */
+    }
+
+    .hero {
+        padding: 3rem 1rem; /* Redueix l’espai per no tallar el text */
+    }
+
+    .cardContainer {
+        grid-template-columns: 1fr; /* Targetes en una sola columna */
+    }
+
+    button, .ctaButton {
+        width: 100%; /* Botons més accessibles en mòbil */
+    }
+}

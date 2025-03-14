@@ -1,0 +1,14 @@
+/* =========================
+   ⬇️ Footer fixat a la part inferior
+   ========================= */
+   .footer {
+    background-color: #800b0b;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    position: relative; /* Evita problemes amb altres elements */
+    margin-top: auto; /* Empeny el footer cap avall si cal */
+  }
+  
